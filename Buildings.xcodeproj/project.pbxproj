@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		72464EC922859791009CAB9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EC822859791009CAB9D /* AppDelegate.swift */; };
-		72464ECB22859791009CAB9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464ECA22859791009CAB9D /* ViewController.swift */; };
 		72464ECE22859791009CAB9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72464ECC22859791009CAB9D /* Main.storyboard */; };
 		72464ED022859791009CAB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72464ECF22859791009CAB9D /* Assets.xcassets */; };
 		72464ED322859791009CAB9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72464ED122859791009CAB9D /* LaunchScreen.storyboard */; };
 		72464EDE22859791009CAB9D /* BuildingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EDD22859791009CAB9D /* BuildingsTests.swift */; };
+		72464EEF22859A77009CAB9D /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EEE22859A77009CAB9D /* Building.swift */; };
+		72464EF122859ABB009CAB9D /* BuildingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF022859ABB009CAB9D /* BuildingsViewController.swift */; };
+		72464EF322859ACB009CAB9D /* BuildingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF222859ACB009CAB9D /* BuildingsViewModel.swift */; };
+		72464EF622859BEE009CAB9D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF522859BEE009CAB9D /* BaseViewController.swift */; };
+		72464EF822859C1C009CAB9D /* FiltersViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF722859C1C009CAB9D /* FiltersViewViewController.swift */; };
+		72464EFA22859C5B009CAB9D /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF922859C5B009CAB9D /* FiltersViewModel.swift */; };
+		72464EFD22859CD3009CAB9D /* BuildingsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EFC22859CD3009CAB9D /* BuildingsWebService.swift */; };
+		72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */; };
 		9CBC0CA5FDBA1FDCF3973518 /* Pods_Buildings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A2D7A7CD39741644026EC4 /* Pods_Buildings.framework */; };
 		CB2347FC1164F2CD693D5A35 /* Pods_BuildingsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C941440FD24E6360F41AF1 /* Pods_BuildingsTests.framework */; };
 /* End PBXBuildFile section */
@@ -35,7 +42,6 @@
 		61832A088F7567BBAA030586 /* Pods-BuildingsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildingsTests.release.xcconfig"; path = "Target Support Files/Pods-BuildingsTests/Pods-BuildingsTests.release.xcconfig"; sourceTree = "<group>"; };
 		72464EC522859791009CAB9D /* Buildings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buildings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72464EC822859791009CAB9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		72464ECA22859791009CAB9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		72464ECD22859791009CAB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72464ECF22859791009CAB9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72464ED222859791009CAB9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +49,14 @@
 		72464ED922859791009CAB9D /* BuildingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuildingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72464EDD22859791009CAB9D /* BuildingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsTests.swift; sourceTree = "<group>"; };
 		72464EDF22859791009CAB9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72464EEE22859A77009CAB9D /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		72464EF022859ABB009CAB9D /* BuildingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsViewController.swift; sourceTree = "<group>"; };
+		72464EF222859ACB009CAB9D /* BuildingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsViewModel.swift; sourceTree = "<group>"; };
+		72464EF522859BEE009CAB9D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		72464EF722859C1C009CAB9D /* FiltersViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewViewController.swift; sourceTree = "<group>"; };
+		72464EF922859C5B009CAB9D /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
+		72464EFC22859CD3009CAB9D /* BuildingsWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsWebService.swift; sourceTree = "<group>"; };
+		72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuidlingsWebServiceImpl.swift; sourceTree = "<group>"; };
 		A63762072E787BF2385925CC /* Pods-Buildings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buildings.debug.xcconfig"; path = "Target Support Files/Pods-Buildings/Pods-Buildings.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +88,6 @@
 				42B384467CD3D06E0663AE8E /* Pods-BuildingsTests.debug.xcconfig */,
 				61832A088F7567BBAA030586 /* Pods-BuildingsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -101,8 +114,12 @@
 		72464EC722859791009CAB9D /* Buildings */ = {
 			isa = PBXGroup;
 			children = (
+				72464EF422859BD2009CAB9D /* Base */,
+				72464EED22859A60009CAB9D /* Models */,
+				72464EEC22859A57009CAB9D /* Views */,
+				72464EEB22859A46009CAB9D /* ViewModels */,
+				72464EFB22859C90009CAB9D /* WebServices */,
 				72464EC822859791009CAB9D /* AppDelegate.swift */,
-				72464ECA22859791009CAB9D /* ViewController.swift */,
 				72464ECC22859791009CAB9D /* Main.storyboard */,
 				72464ECF22859791009CAB9D /* Assets.xcassets */,
 				72464ED122859791009CAB9D /* LaunchScreen.storyboard */,
@@ -118,6 +135,49 @@
 				72464EDF22859791009CAB9D /* Info.plist */,
 			);
 			path = BuildingsTests;
+			sourceTree = "<group>";
+		};
+		72464EEB22859A46009CAB9D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				72464EF222859ACB009CAB9D /* BuildingsViewModel.swift */,
+				72464EF922859C5B009CAB9D /* FiltersViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		72464EEC22859A57009CAB9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				72464EF022859ABB009CAB9D /* BuildingsViewController.swift */,
+				72464EF722859C1C009CAB9D /* FiltersViewViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		72464EED22859A60009CAB9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72464EEE22859A77009CAB9D /* Building.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		72464EF422859BD2009CAB9D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				72464EF522859BEE009CAB9D /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		72464EFB22859C90009CAB9D /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				72464EFC22859CD3009CAB9D /* BuildingsWebService.swift */,
+				72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */,
+			);
+			path = WebServices;
 			sourceTree = "<group>";
 		};
 		96681AA9FF317B16589D71E8 /* Frameworks */ = {
@@ -308,7 +368,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72464ECB22859791009CAB9D /* ViewController.swift in Sources */,
+				72464EF622859BEE009CAB9D /* BaseViewController.swift in Sources */,
+				72464EF822859C1C009CAB9D /* FiltersViewViewController.swift in Sources */,
+				72464EFA22859C5B009CAB9D /* FiltersViewModel.swift in Sources */,
+				72464EF122859ABB009CAB9D /* BuildingsViewController.swift in Sources */,
+				72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */,
+				72464EFD22859CD3009CAB9D /* BuildingsWebService.swift in Sources */,
+				72464EF322859ACB009CAB9D /* BuildingsViewModel.swift in Sources */,
+				72464EEF22859A77009CAB9D /* Building.swift in Sources */,
 				72464EC922859791009CAB9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
