@@ -22,6 +22,7 @@
 		72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */; };
 		72464F012285A92B009CAB9D /* WebServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464F002285A92B009CAB9D /* WebServiceError.swift */; };
 		72464F032285B441009CAB9D /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464F022285B441009CAB9D /* WebServiceTests.swift */; };
+		72B45E3B228822FB00982D34 /* BuildingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */; };
 		9CBC0CA5FDBA1FDCF3973518 /* Pods_Buildings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A2D7A7CD39741644026EC4 /* Pods_Buildings.framework */; };
 		CB2347FC1164F2CD693D5A35 /* Pods_BuildingsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C941440FD24E6360F41AF1 /* Pods_BuildingsTests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuidlingsWebServiceImpl.swift; sourceTree = "<group>"; };
 		72464F002285A92B009CAB9D /* WebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceError.swift; sourceTree = "<group>"; };
 		72464F022285B441009CAB9D /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
+		72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsTableViewCell.swift; sourceTree = "<group>"; };
 		A63762072E787BF2385925CC /* Pods-Buildings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buildings.debug.xcconfig"; path = "Target Support Files/Pods-Buildings/Pods-Buildings.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 			children = (
 				72464EF422859BD2009CAB9D /* Base */,
 				72464EF022859ABB009CAB9D /* BuildingsViewController.swift */,
+				72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */,
 				72464EF722859C1C009CAB9D /* FiltersViewViewController.swift */,
 			);
 			path = Views;
@@ -406,6 +409,7 @@
 				72464EFA22859C5B009CAB9D /* FiltersViewModel.swift in Sources */,
 				72464EF122859ABB009CAB9D /* BuildingsViewController.swift in Sources */,
 				72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */,
+				72B45E3B228822FB00982D34 /* BuildingsTableViewCell.swift in Sources */,
 				72464F012285A92B009CAB9D /* WebServiceError.swift in Sources */,
 				72464EFD22859CD3009CAB9D /* BuildingsWebService.swift in Sources */,
 				72464EF322859ACB009CAB9D /* BuildingsViewModel.swift in Sources */,

@@ -7,24 +7,47 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import Kingfisher
 
 class BuildingsViewController: BaseViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    private let bag = DisposeBag()
+    private let viewModel = BuildingsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.configViews()
+        self.setupReactive()
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension BuildingsViewController {
+    
+    private func configViews() {
+        self.tableView.rx.setDelegate(self).disposed(by: bag)
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 300
     }
-    */
+    
+    private func setupReactive() {
+        self.viewModel.buildings
+            .bind(to: tableView.rx.items(cellIdentifier: "BuildingsTableViewCell", cellType: BuildingsTableViewCell.self)) { (row, building, cell) in
+                cell.cityLabel.text = "\(building.address.city) \(building.address.country)"
+                cell.addressLabel.text = "\(building.address.line1 ?? "") \(building.address.line2 ?? "")"
+                cell.buildingImageView.kf.setImage(with: URL(string: building.imageUrl))
+            }.disposed(by: bag)
+    }
 
+}
+
+// MARK: - UITableViewDelegate
+
+extension BuildingsViewController: UITableViewDelegate {
+    
 }

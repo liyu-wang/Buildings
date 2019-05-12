@@ -7,7 +7,35 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 struct BuildingsViewModel {
     
+    // Outgoing
+    let isLoading = BehaviorRelay<Bool?>(value: nil)
+    let errorMsg = BehaviorRelay<String?>(value: nil)
+    let buildings = BehaviorRelay<[Building]>(value: [])
+    
+    private let bag = DisposeBag()
+    private let buildingWebService: BuildingsWebService
+    
+    init(buildingWebService: BuildingsWebService = BuildingsWebServiceImpl()) {
+        self.buildingWebService = buildingWebService
+        
+        self.fetchBuildings()
+    }
+    
+    func fetchBuildings() {
+        self.buildingWebService.fetchBuildings()
+            .subscribe(
+                onNext: { buildingList in
+                    self.buildings.accept(buildingList)
+                },
+                onError: { err in
+                    self.errorMsg.accept(err.localizedDescription)
+                }
+            )
+            .disposed(by: bag)
+    }
 }
