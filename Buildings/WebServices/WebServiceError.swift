@@ -1,5 +1,5 @@
 //
-//  BuildingsWebService.swift
+//  WebServiceError.swift
 //  Buildings
 //
 //  Created by Liyu Wang on 10/5/19.
@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import RxSwift
 
-protocol BuildingsWebService {
-    func fetchBuildings() -> Observable<[Building]>
+enum WebServiceError: Error {
+    case InvalidUrl(String)
+    case serviceFailed(String)
 }

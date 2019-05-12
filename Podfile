@@ -14,6 +14,8 @@ target 'Buildings' do
   target 'BuildingsTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
   end
 
 end
