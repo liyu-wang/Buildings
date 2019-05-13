@@ -46,4 +46,5 @@ extension BuildingsViewModel {
     func building(at index: Int) -> Building {
         return self.buildings.value[index]
     }
+    
 }

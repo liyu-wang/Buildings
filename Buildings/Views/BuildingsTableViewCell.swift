@@ -17,7 +17,8 @@ class BuildingsTableViewCell: UITableViewCell {
     @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var actionsStackView: UIStackView!
     
-    var bgView: UIView!
+    // weak ref to the owning controller, so later we can forward actions to the owning controller
+    weak var controller: BuildingsViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +28,6 @@ class BuildingsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        
         overlayView.backgroundColor = selected ? UIColor.black.withAlphaComponent(0.2) : UIColor.clear
         actionsStackView.isHidden = !selected
     }
@@ -36,20 +36,40 @@ class BuildingsTableViewCell: UITableViewCell {
 
 extension BuildingsTableViewCell {
     
-    func show(actions: [String]) {
-        // add actions to the stack view if we never do that before
-        guard actionsStackView.arrangedSubviews.count == 0 else { return }
+    func configStackView(with actions: [ProductAction]) {
+        // clear existing actions button, reused cell might have previous generated buttons
+        let arrangedSubviews = actionsStackView.arrangedSubviews
+        for v in arrangedSubviews {
+            v.removeFromSuperview()
+        }
         
+        // generating new action buttons
         for action in actions {
             let button = ActionButton()
-            button.setTitle(action, for: .normal)
+            button.setTitle(action.title, for: .normal)
             button.addTarget(self, action: #selector(BuildingsTableViewCell.buttonTapped(sender:)), for: .touchUpInside)
+            switch action {
+            case .assetMap:
+                button.tag = 100
+            case .assetExplorer:
+                button.tag = 101
+            case .assetRegister:
+                button.tag = 102
+            }
             
             actionsStackView.addArrangedSubview(button)
         }
     }
     
     @objc func buttonTapped(sender: Any) {
-        print("haha")
+        if let button = sender as? UIButton {
+            var action = ProductAction.assetMap
+            if button.tag == 101 {
+                action = .assetExplorer
+            } else if button.tag == 102  {
+                action = .assetRegister
+            }
+            self.controller?.didPerform(action: action, on: self)
+        }
     }
 }
