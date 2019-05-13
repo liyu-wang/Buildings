@@ -93,6 +93,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpX-9c-s89">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RTF-1x-jXK">
+                                        <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.44159881161971831" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RTF-1x-jXK" firstAttribute="centerY" secondItem="mpX-9c-s89" secondAttribute="centerY" id="4mf-Xz-iaS"/>
+                                    <constraint firstItem="RTF-1x-jXK" firstAttribute="centerX" secondItem="mpX-9c-s89" secondAttribute="centerX" id="bzq-og-lNP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -100,11 +114,16 @@
                             <constraint firstItem="OeT-xH-Pkz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GVO-Aa-fBc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OeT-xH-Pkz" secondAttribute="bottom" id="J7H-qX-ZpT"/>
                             <constraint firstItem="OeT-xH-Pkz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K4q-GD-ivs"/>
+                            <constraint firstAttribute="bottom" secondItem="mpX-9c-s89" secondAttribute="bottom" id="W0a-g8-aAM"/>
+                            <constraint firstAttribute="trailing" secondItem="mpX-9c-s89" secondAttribute="trailing" id="YkA-zN-sI0"/>
+                            <constraint firstItem="mpX-9c-s89" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aIw-VZ-Ssv"/>
+                            <constraint firstItem="mpX-9c-s89" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dup-SL-rhm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ncw-3a-KnA"/>
                     <connections>
+                        <outlet property="loadingSpinner" destination="mpX-9c-s89" id="u0g-71-EE9"/>
                         <outlet property="tableView" destination="OeT-xH-Pkz" id="bzh-PN-c7A"/>
                     </connections>
                 </viewController>

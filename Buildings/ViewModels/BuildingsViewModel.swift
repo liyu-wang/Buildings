@@ -13,7 +13,7 @@ import RxCocoa
 struct BuildingsViewModel {
     
     // Outgoing
-    let isLoading = BehaviorRelay<Bool?>(value: nil)
+    let isLoading = BehaviorRelay<Bool>(value: false)
     let errorMsg = BehaviorRelay<String?>(value: nil)
     let buildings = BehaviorRelay<[Building]>(value: [])
     
@@ -22,8 +22,6 @@ struct BuildingsViewModel {
     
     init(buildingWebService: BuildingsWebService = BuildingsWebServiceImpl()) {
         self.buildingWebService = buildingWebService
-        
-        self.fetchBuildings()
     }
     
 }
@@ -31,6 +29,8 @@ struct BuildingsViewModel {
 extension BuildingsViewModel {
     
     func fetchBuildings() {
+        self.isLoading.accept(true)
+        
         self.buildingWebService.fetchBuildings()
             .subscribe(
                 onNext: { buildingList in
@@ -38,6 +38,9 @@ extension BuildingsViewModel {
                 },
                 onError: { err in
                     self.errorMsg.accept(err.localizedDescription)
+                },
+                onDisposed: {
+                    self.isLoading.accept(false)
                 }
             )
             .disposed(by: bag)

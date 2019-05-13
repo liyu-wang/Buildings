@@ -16,6 +16,7 @@ import MapKit
 class BuildingsViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var loadingSpinner: UIView!
     
     private let bag = DisposeBag()
     private let viewModel = BuildingsViewModel()
@@ -25,6 +26,8 @@ class BuildingsViewController: BaseViewController {
 
         self.configViews()
         self.setupReactive()
+        
+        self.viewModel.fetchBuildings()
     }
     
 }
@@ -48,7 +51,15 @@ extension BuildingsViewController {
                 cell.addressLabel.text = "\(building.address.line1 ?? "") \(building.address.line2 ?? "")"
                 cell.buildingImageView.kf.setImage(with: URL(string: building.imageUrl))
                 cell.tickView.isHidden = !building.registered
-            }.disposed(by: bag)
+            }
+            .disposed(by: bag)
+        
+        self.viewModel.isLoading
+            .observeOn(MainScheduler.instance)
+            .skip(1)
+            .map { !$0 }
+            .bind(to: self.loadingSpinner.rx.isHidden)
+            .disposed(by: bag)
     }
     
 }
