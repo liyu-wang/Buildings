@@ -26,6 +26,10 @@ struct BuildingsViewModel {
         self.fetchBuildings()
     }
     
+}
+
+extension BuildingsViewModel {
+    
     func fetchBuildings() {
         self.buildingWebService.fetchBuildings()
             .subscribe(
@@ -37,5 +41,9 @@ struct BuildingsViewModel {
                 }
             )
             .disposed(by: bag)
+    }
+    
+    func building(at index: Int) -> Building {
+        return self.buildings.value[index]
     }
 }

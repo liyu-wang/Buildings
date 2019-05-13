@@ -30,7 +30,8 @@ class BuildingsViewController: BaseViewController {
 extension BuildingsViewController {
     
     private func configViews() {
-        self.tableView.rx.setDelegate(self).disposed(by: bag)
+        self.tableView.delegate = self
+        
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 300
     }
@@ -43,11 +44,16 @@ extension BuildingsViewController {
                 cell.buildingImageView.kf.setImage(with: URL(string: building.imageUrl))
             }.disposed(by: bag)
     }
-
+    
 }
 
 // MARK: - UITableViewDelegate
 
 extension BuildingsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? BuildingsTableViewCell else { return }
+        
+        let building = self.viewModel.building(at: indexPath.row)
+        cell.show(actions: building.availableProducts)
+    }
 }

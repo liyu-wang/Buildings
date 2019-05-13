@@ -47,32 +47,47 @@
                                                         <constraint firstAttribute="height" constant="44" id="jQI-Ha-H0G"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaX-HG-ucS">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaX-HG-ucS">
                                                     <rect key="frame" x="20" y="69.5" width="374" height="224.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="SaX-HG-ucS" secondAttribute="height" multiplier="5:3" id="gY6-Nm-X9e"/>
+                                                        <constraint firstAttribute="width" secondItem="SaX-HG-ucS" secondAttribute="height" multiplier="5:3" id="Eqv-sZ-23U"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtK-If-G8z">
+                                                    <rect key="frame" x="20" y="69.5" width="374" height="224.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="60" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uSU-bZ-ADq">
+                                                    <rect key="frame" x="107" y="152.5" width="200" height="60"/>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SaX-HG-ucS" firstAttribute="trailing" secondItem="hVM-Kg-qUs" secondAttribute="trailingMargin" id="0yc-it-bV6"/>
                                                 <constraint firstItem="SaX-HG-ucS" firstAttribute="leading" secondItem="hVM-Kg-qUs" secondAttribute="leadingMargin" id="1vD-5c-E5I"/>
+                                                <constraint firstItem="dtK-If-G8z" firstAttribute="leading" secondItem="SaX-HG-ucS" secondAttribute="leading" id="2AC-ki-4t7"/>
                                                 <constraint firstItem="WeO-SK-eaq" firstAttribute="top" secondItem="hVM-Kg-qUs" secondAttribute="topMargin" constant="4" id="6z0-OF-iFF"/>
                                                 <constraint firstItem="bGF-nk-HNf" firstAttribute="leading" secondItem="WeO-SK-eaq" secondAttribute="trailing" constant="4" id="9MX-rA-uPh"/>
+                                                <constraint firstItem="dtK-If-G8z" firstAttribute="trailing" secondItem="SaX-HG-ucS" secondAttribute="trailing" id="9ag-eF-a4k"/>
                                                 <constraint firstItem="SaX-HG-ucS" firstAttribute="bottom" secondItem="hVM-Kg-qUs" secondAttribute="bottomMargin" id="CgG-8M-vpK"/>
+                                                <constraint firstItem="uSU-bZ-ADq" firstAttribute="centerX" secondItem="hVM-Kg-qUs" secondAttribute="centerX" id="F6V-nj-Ckc"/>
                                                 <constraint firstItem="O2i-1y-18Q" firstAttribute="top" secondItem="WeO-SK-eaq" secondAttribute="bottom" constant="2" id="HDP-Bc-qFb"/>
+                                                <constraint firstItem="uSU-bZ-ADq" firstAttribute="centerY" secondItem="hVM-Kg-qUs" secondAttribute="centerY" constant="30" id="HT0-uc-JL0"/>
                                                 <constraint firstItem="bGF-nk-HNf" firstAttribute="top" secondItem="hVM-Kg-qUs" secondAttribute="topMargin" constant="4" id="TTF-kf-LSN"/>
                                                 <constraint firstItem="bGF-nk-HNf" firstAttribute="leading" secondItem="O2i-1y-18Q" secondAttribute="trailing" constant="4" id="Uex-O0-Gpz"/>
                                                 <constraint firstItem="SaX-HG-ucS" firstAttribute="top" secondItem="O2i-1y-18Q" secondAttribute="bottom" constant="4" id="VPd-kA-dnB"/>
+                                                <constraint firstItem="dtK-If-G8z" firstAttribute="top" secondItem="SaX-HG-ucS" secondAttribute="top" id="XcA-ej-wk8"/>
                                                 <constraint firstItem="WeO-SK-eaq" firstAttribute="leading" secondItem="hVM-Kg-qUs" secondAttribute="leadingMargin" id="h5R-Nm-RGs"/>
                                                 <constraint firstItem="O2i-1y-18Q" firstAttribute="leading" secondItem="hVM-Kg-qUs" secondAttribute="leadingMargin" id="nxD-Ei-S03"/>
                                                 <constraint firstItem="bGF-nk-HNf" firstAttribute="trailing" secondItem="hVM-Kg-qUs" secondAttribute="trailingMargin" id="uUk-um-O0i"/>
+                                                <constraint firstItem="dtK-If-G8z" firstAttribute="bottom" secondItem="SaX-HG-ucS" secondAttribute="bottom" id="vYM-05-uyP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="actionsStackView" destination="uSU-bZ-ADq" id="XYR-SU-Uro"/>
                                             <outlet property="addressLabel" destination="O2i-1y-18Q" id="cRk-pu-pyB"/>
                                             <outlet property="buildingImageView" destination="SaX-HG-ucS" id="ima-H0-JI6"/>
                                             <outlet property="cityLabel" destination="WeO-SK-eaq" id="MjE-w1-Qkc"/>
+                                            <outlet property="overlayView" destination="dtK-If-G8z" id="YQg-F0-hxE"/>
                                             <outlet property="tickView" destination="bGF-nk-HNf" id="RRG-pt-sgr"/>
                                         </connections>
                                     </tableViewCell>
