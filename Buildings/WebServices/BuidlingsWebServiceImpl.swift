@@ -24,7 +24,10 @@ struct BuildingsWebServiceImpl: BuildingsWebService {
             return Observable.error(WebServiceError.InvalidUrl("invalid url!"))
         }
         
-        return URLSession.shared.rx.response(request: URLRequest(url: url))
+        var request = URLRequest(url: url)
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        
+        return URLSession.shared.rx.response(request: request)
             .debug("GET \(path)")
             .flatMap { response, data -> Observable<[Building]> in
                 if 200 ..< 300 ~= response.statusCode {

@@ -18,7 +18,6 @@ class BuildingsViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingSpinner: UIView!
     
-    private let bag = DisposeBag()
     private let viewModel = BuildingsViewModel()
     
     override func viewDidLoad() {
@@ -29,7 +28,7 @@ class BuildingsViewController: BaseViewController {
         
         self.viewModel.fetchBuildings()
     }
-    
+
 }
 
 // MARK: - view configs

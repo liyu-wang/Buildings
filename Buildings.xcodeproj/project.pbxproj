@@ -16,7 +16,7 @@
 		72464EF122859ABB009CAB9D /* BuildingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF022859ABB009CAB9D /* BuildingsViewController.swift */; };
 		72464EF322859ACB009CAB9D /* BuildingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF222859ACB009CAB9D /* BuildingsViewModel.swift */; };
 		72464EF622859BEE009CAB9D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF522859BEE009CAB9D /* BaseViewController.swift */; };
-		72464EF822859C1C009CAB9D /* FiltersViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF722859C1C009CAB9D /* FiltersViewViewController.swift */; };
+		72464EF822859C1C009CAB9D /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF722859C1C009CAB9D /* FiltersViewController.swift */; };
 		72464EFA22859C5B009CAB9D /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EF922859C5B009CAB9D /* FiltersViewModel.swift */; };
 		72464EFD22859CD3009CAB9D /* BuildingsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EFC22859CD3009CAB9D /* BuildingsWebService.swift */; };
 		72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */; };
@@ -27,6 +27,10 @@
 		72B45E402289779900982D34 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3F2289779900982D34 /* UIImage+Extension.swift */; };
 		72B45E422289959F00982D34 /* BuildingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E412289959E00982D34 /* BuildingDetailsViewController.swift */; };
 		72B45E45228995F000982D34 /* BuildingDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E44228995F000982D34 /* BuildingDetailsViewModel.swift */; };
+		72B45E472289BD5700982D34 /* TagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E462289BD5700982D34 /* TagLabel.swift */; };
+		72B45E492289BDAC00982D34 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E482289BDAC00982D34 /* FilterCollectionViewCell.swift */; };
+		72B45E4C228AE0EC00982D34 /* FilterCollectionViewSupplimentaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E4B228AE0EC00982D34 /* FilterCollectionViewSupplimentaryHeader.swift */; };
+		72D6F0C1228A78FF00EB25BE /* FiltersInMemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D6F0C0228A78FF00EB25BE /* FiltersInMemoryStore.swift */; };
 		9CBC0CA5FDBA1FDCF3973518 /* Pods_Buildings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A2D7A7CD39741644026EC4 /* Pods_Buildings.framework */; };
 		CB2347FC1164F2CD693D5A35 /* Pods_BuildingsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C941440FD24E6360F41AF1 /* Pods_BuildingsTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,7 +64,7 @@
 		72464EF022859ABB009CAB9D /* BuildingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsViewController.swift; sourceTree = "<group>"; };
 		72464EF222859ACB009CAB9D /* BuildingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsViewModel.swift; sourceTree = "<group>"; };
 		72464EF522859BEE009CAB9D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		72464EF722859C1C009CAB9D /* FiltersViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewViewController.swift; sourceTree = "<group>"; };
+		72464EF722859C1C009CAB9D /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		72464EF922859C5B009CAB9D /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
 		72464EFC22859CD3009CAB9D /* BuildingsWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsWebService.swift; sourceTree = "<group>"; };
 		72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuidlingsWebServiceImpl.swift; sourceTree = "<group>"; };
@@ -71,6 +75,10 @@
 		72B45E3F2289779900982D34 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		72B45E412289959E00982D34 /* BuildingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDetailsViewController.swift; sourceTree = "<group>"; };
 		72B45E44228995F000982D34 /* BuildingDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingDetailsViewModel.swift; sourceTree = "<group>"; };
+		72B45E462289BD5700982D34 /* TagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagLabel.swift; sourceTree = "<group>"; };
+		72B45E482289BDAC00982D34 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		72B45E4B228AE0EC00982D34 /* FilterCollectionViewSupplimentaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewSupplimentaryHeader.swift; sourceTree = "<group>"; };
+		72D6F0C0228A78FF00EB25BE /* FiltersInMemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersInMemoryStore.swift; sourceTree = "<group>"; };
 		A63762072E787BF2385925CC /* Pods-Buildings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Buildings.debug.xcconfig"; path = "Target Support Files/Pods-Buildings/Pods-Buildings.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +136,7 @@
 		72464EC722859791009CAB9D /* Buildings */ = {
 			isa = PBXGroup;
 			children = (
+				72D6F0BF228A78CF00EB25BE /* DB */,
 				72B45E3E2289778000982D34 /* Extensions */,
 				72464EED22859A60009CAB9D /* Models */,
 				72464EEC22859A57009CAB9D /* Views */,
@@ -165,11 +174,12 @@
 		72464EEC22859A57009CAB9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				72464EF422859BD2009CAB9D /* Base */,
+				72464EF422859BD2009CAB9D /* Custom */,
+				72B45E4A228AE03300982D34 /* Cells */,
+				72464EF522859BEE009CAB9D /* BaseViewController.swift */,
 				72464EF022859ABB009CAB9D /* BuildingsViewController.swift */,
-				72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */,
 				72B45E412289959E00982D34 /* BuildingDetailsViewController.swift */,
-				72464EF722859C1C009CAB9D /* FiltersViewViewController.swift */,
+				72464EF722859C1C009CAB9D /* FiltersViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,13 +192,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		72464EF422859BD2009CAB9D /* Base */ = {
+		72464EF422859BD2009CAB9D /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				72464EF522859BEE009CAB9D /* BaseViewController.swift */,
 				72B45E3C22896B2300982D34 /* ActionButton.swift */,
+				72B45E462289BD5700982D34 /* TagLabel.swift */,
 			);
-			path = Base;
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		72464EFB22859C90009CAB9D /* WebServices */ = {
@@ -207,6 +217,24 @@
 				72B45E3F2289779900982D34 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72B45E4A228AE03300982D34 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */,
+				72B45E482289BDAC00982D34 /* FilterCollectionViewCell.swift */,
+				72B45E4B228AE0EC00982D34 /* FilterCollectionViewSupplimentaryHeader.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		72D6F0BF228A78CF00EB25BE /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				72D6F0C0228A78FF00EB25BE /* FiltersInMemoryStore.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 		96681AA9FF317B16589D71E8 /* Frameworks */ = {
@@ -427,11 +455,15 @@
 				72B45E402289779900982D34 /* UIImage+Extension.swift in Sources */,
 				72B45E422289959F00982D34 /* BuildingDetailsViewController.swift in Sources */,
 				72464EF622859BEE009CAB9D /* BaseViewController.swift in Sources */,
-				72464EF822859C1C009CAB9D /* FiltersViewViewController.swift in Sources */,
+				72464EF822859C1C009CAB9D /* FiltersViewController.swift in Sources */,
 				72464EFA22859C5B009CAB9D /* FiltersViewModel.swift in Sources */,
+				72B45E472289BD5700982D34 /* TagLabel.swift in Sources */,
 				72464EF122859ABB009CAB9D /* BuildingsViewController.swift in Sources */,
+				72B45E4C228AE0EC00982D34 /* FilterCollectionViewSupplimentaryHeader.swift in Sources */,
+				72D6F0C1228A78FF00EB25BE /* FiltersInMemoryStore.swift in Sources */,
 				72B45E45228995F000982D34 /* BuildingDetailsViewModel.swift in Sources */,
 				72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */,
+				72B45E492289BDAC00982D34 /* FilterCollectionViewCell.swift in Sources */,
 				72B45E3B228822FB00982D34 /* BuildingsTableViewCell.swift in Sources */,
 				72464F012285A92B009CAB9D /* WebServiceError.swift in Sources */,
 				72464EFD22859CD3009CAB9D /* BuildingsWebService.swift in Sources */,
@@ -602,6 +634,7 @@
 			baseConfigurationReference = A63762072E787BF2385925CC /* Pods-Buildings.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3B59G9QQ28;
 				INFOPLIST_FILE = Buildings/Info.plist;
@@ -611,6 +644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.Buildings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -621,6 +655,7 @@
 			baseConfigurationReference = 31FD68D9EE630A176D227119 /* Pods-Buildings.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3B59G9QQ28;
 				INFOPLIST_FILE = Buildings/Info.plist;
@@ -630,6 +665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fantasy.Buildings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Buildings View Controller-->
+        <!--Building List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BuildingsViewController" customModule="Buildings" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +93,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpX-9c-s89">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpX-9c-s89">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RTF-1x-jXK">
@@ -121,7 +121,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ncw-3a-KnA"/>
+                    <navigationItem key="navigationItem" title="Building List" id="Ncw-3a-KnA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter" id="Ht4-6s-pXO">
+                            <connections>
+                                <segue destination="s0T-Ls-1Ka" kind="show" identifier="showFilters" id="qaZ-gY-Ria"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loadingSpinner" destination="mpX-9c-s89" id="u0g-71-EE9"/>
                         <outlet property="tableView" destination="OeT-xH-Pkz" id="bzh-PN-c7A"/>
@@ -130,6 +136,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="134.78260869565219" y="-64.285714285714278"/>
+        </scene>
+        <!--Filters-->
+        <scene sceneID="f85-Jr-p7L">
+            <objects>
+                <viewController id="s0T-Ls-1Ka" customClass="FiltersViewController" customModule="Buildings" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jkJ-tr-SMJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kun-pM-ZiG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CE2-fu-Pnc">
+                                    <size key="itemSize" width="139" height="71"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCollectionViewCell" id="eBi-US-nt3" customClass="FilterCollectionViewCell" customModule="Buildings" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="120" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0x-R5-q7a" customClass="TagLabel" customModule="Buildings" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="71"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="d0x-R5-q7a" secondAttribute="trailing" id="f9l-T5-Jbz"/>
+                                            <constraint firstAttribute="bottom" secondItem="d0x-R5-q7a" secondAttribute="bottom" id="kw0-gq-alD"/>
+                                            <constraint firstItem="d0x-R5-q7a" firstAttribute="top" secondItem="eBi-US-nt3" secondAttribute="top" id="vcF-35-t9m"/>
+                                            <constraint firstItem="d0x-R5-q7a" firstAttribute="leading" secondItem="eBi-US-nt3" secondAttribute="leading" id="yA9-Ta-vfB"/>
+                                        </constraints>
+                                        <size key="customSize" width="120" height="60"/>
+                                        <connections>
+                                            <outlet property="tagLabel" destination="d0x-R5-q7a" id="Tzi-8G-SGV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FillterCollectionViewSupplementaryHeader" id="lTZ-b9-jRZ" customClass="FilterCollectionViewSupplimentaryHeader" customModule="Buildings" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBb-vT-rAg">
+                                            <rect key="frame" x="8" y="14.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJE-gw-tmh">
+                                            <rect key="frame" x="370" y="10" width="36" height="30"/>
+                                            <state key="normal" title="Clear"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fBb-vT-rAg" firstAttribute="centerY" secondItem="lTZ-b9-jRZ" secondAttribute="centerY" id="SxA-tb-olf"/>
+                                        <constraint firstItem="fBb-vT-rAg" firstAttribute="leading" secondItem="lTZ-b9-jRZ" secondAttribute="leading" constant="8" id="cXZ-Dz-ZBZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="sJE-gw-tmh" secondAttribute="trailing" constant="8" id="fx2-Hr-1MS"/>
+                                        <constraint firstItem="sJE-gw-tmh" firstAttribute="centerY" secondItem="lTZ-b9-jRZ" secondAttribute="centerY" id="jd0-w2-TsP"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="clearButton" destination="sJE-gw-tmh" id="YLB-HT-5uT"/>
+                                        <outlet property="filterLabel" destination="fBb-vT-rAg" id="2hC-0r-eIW"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="s0T-Ls-1Ka" id="HsC-Uj-9Pz"/>
+                                    <outlet property="delegate" destination="s0T-Ls-1Ka" id="Yce-6D-69D"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kun-pM-ZiG" firstAttribute="leading" secondItem="QTE-dV-iJe" secondAttribute="leading" id="7b5-Mz-Dc1"/>
+                            <constraint firstItem="kun-pM-ZiG" firstAttribute="top" secondItem="QTE-dV-iJe" secondAttribute="top" id="W2V-Nv-UaE"/>
+                            <constraint firstItem="QTE-dV-iJe" firstAttribute="bottom" secondItem="kun-pM-ZiG" secondAttribute="bottom" id="Ycq-wr-tvl"/>
+                            <constraint firstItem="QTE-dV-iJe" firstAttribute="trailing" secondItem="kun-pM-ZiG" secondAttribute="trailing" id="qga-Zw-qgg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QTE-dV-iJe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filters" id="Rvj-Gw-k3p"/>
+                    <connections>
+                        <outlet property="filterCollectionView" destination="kun-pM-ZiG" id="5Bx-Jo-r7H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EZy-IE-PzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1163.768115942029" y="-64.285714285714278"/>
         </scene>
         <!--Building Details View Controller-->
         <scene sceneID="IJi-TE-rCU">
@@ -181,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGW-s4-9DX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1230.4347826086957" y="-64.285714285714278"/>
+            <point key="canvasLocation" x="135" y="664"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pWT-WJ-abc">
@@ -202,5 +301,6 @@
     </scenes>
     <resources>
         <image name="checkmark" width="48" height="48"/>
+        <image name="filter" width="20" height="20"/>
     </resources>
 </document>

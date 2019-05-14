@@ -26,8 +26,6 @@ class BuildingDetailsViewController: BaseViewController {
     
     var viewModel: BuildingDetailsViewModel!
     
-    private let bag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,8 +45,7 @@ extension BuildingDetailsViewController {
     }
     
     private func setupReactive() {
-        let buildingObservable = self.viewModel.building.share()
-        
+        let buildingObservable = self.viewModel.building.asObservable()
         buildingObservable
             .subscribe(
                 onNext: { [weak self] building in
