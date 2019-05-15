@@ -7,28 +7,91 @@
 //
 
 import XCTest
+import RxSwift
+import RxCocoa
 @testable import Buildings
 
 class BuildingsTests: XCTestCase {
 
+    private let buildingsViewModel = BuildingsViewModel(buildingWebService: MockBuidlingsWebServiceImpl())
+    private let bag = DisposeBag()
+    
+    private var disposable: Disposable?
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // load buildings via MockBuidlingsWebServiceImpl from local json file in the app bundle
+        buildingsViewModel.fetchBuildings()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.disposable?.dispose()
+        
+        // clear countries and cities in in-memory db
+        FiltersInMemoryStore.shared.save(countries: [], cities: [])
+        // clear selected countries and cities in in-memory db
+        FiltersInMemoryStore.shared.save(selectedSountries: [], selectedeCities: [])
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMockServiceLoadingSuccess() {
+        
+        self.disposable = buildingsViewModel.buildings
+            .subscribe(
+                onNext: { buildings in
+                    // 4 buildings in total
+                    XCTAssert(buildings.count == 4)
+                },
+                onError: { error in
+                    XCTFail()
+                }
+            )
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testCountryFilterOnly() {
+        // apply country filter
+        FiltersInMemoryStore.shared.save(selectedSountries: ["Germany"], selectedeCities: [])
+        
+        self.disposable = buildingsViewModel.buildings
+            .subscribe(
+                onNext: { buildings in
+                    // only 1 building in Germany
+                    XCTAssert(buildings.count == 1)
+                },
+                onError: { error in
+                    XCTFail()
+                }
+            )
+    }
+    
+    func testCityFilterOnly() {
+        // apply country filter
+        FiltersInMemoryStore.shared.save(selectedSountries: [], selectedeCities: ["Sydney"])
+        
+        self.disposable = buildingsViewModel.buildings
+            .subscribe(
+                onNext: { buildings in
+                    // 2 buildings in sydney
+                    XCTAssert(buildings.count == 2)
+            },
+                onError: { error in
+                    XCTFail()
+            }
+        )
+    }
+    
+    func testCountryAndCityFilter() {
+        // apply country filter
+        FiltersInMemoryStore.shared.save(selectedSountries: ["Germany"], selectedeCities: ["Sydney"])
+        
+        self.disposable = buildingsViewModel.buildings
+            .subscribe(
+                onNext: { buildings in
+                    // no buildings in sydney Germany
+                    XCTAssert(buildings.count == 0)
+            },
+                onError: { error in
+                    XCTFail()
+            }
+        )
     }
 
 }

@@ -22,6 +22,8 @@
 		72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */; };
 		72464F012285A92B009CAB9D /* WebServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464F002285A92B009CAB9D /* WebServiceError.swift */; };
 		72464F032285B441009CAB9D /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464F022285B441009CAB9D /* WebServiceTests.swift */; };
+		7250DA72228B03EA00A33F64 /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 7250DA71228B03EA00A33F64 /* buildings.json */; };
+		7250DA74228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7250DA73228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift */; };
 		72B45E3B228822FB00982D34 /* BuildingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */; };
 		72B45E3D22896B2300982D34 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3C22896B2300982D34 /* ActionButton.swift */; };
 		72B45E402289779900982D34 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3F2289779900982D34 /* UIImage+Extension.swift */; };
@@ -70,6 +72,8 @@
 		72464EFE22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuidlingsWebServiceImpl.swift; sourceTree = "<group>"; };
 		72464F002285A92B009CAB9D /* WebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceError.swift; sourceTree = "<group>"; };
 		72464F022285B441009CAB9D /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
+		7250DA71228B03EA00A33F64 /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
+		7250DA73228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBuidlingsWebServiceImpl.swift; sourceTree = "<group>"; };
 		72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsTableViewCell.swift; sourceTree = "<group>"; };
 		72B45E3C22896B2300982D34 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		72B45E3F2289779900982D34 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -155,8 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				72464EDD22859791009CAB9D /* BuildingsTests.swift */,
-				72464EDF22859791009CAB9D /* Info.plist */,
 				72464F022285B441009CAB9D /* WebServiceTests.swift */,
+				7250DA73228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift */,
+				72464EDF22859791009CAB9D /* Info.plist */,
+				7250DA71228B03EA00A33F64 /* buildings.json */,
 			);
 			path = BuildingsTests;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7250DA72228B03EA00A33F64 /* buildings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72464F032285B441009CAB9D /* WebServiceTests.swift in Sources */,
+				7250DA74228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift in Sources */,
 				72464EDE22859791009CAB9D /* BuildingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

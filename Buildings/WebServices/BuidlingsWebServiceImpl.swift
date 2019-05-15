@@ -21,7 +21,7 @@ struct BuildingsWebServiceImpl: BuildingsWebService {
     func fetchBuildings() -> Observable<[Building]> {
         let path = "/buildings"
         guard let url = URL(string: baseUrl + path) else {
-            return Observable.error(WebServiceError.InvalidUrl("invalid url!"))
+            return Observable.error(WebServiceError.invalidUrl("invalid url!"))
         }
         
         var request = URLRequest(url: url)

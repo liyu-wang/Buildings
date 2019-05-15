@@ -9,6 +9,6 @@
 import Foundation
 
 enum WebServiceError: Error {
-    case InvalidUrl(String)
+    case invalidUrl(String)
     case serviceFailed(String)
 }
