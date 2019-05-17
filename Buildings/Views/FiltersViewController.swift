@@ -10,6 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+fileprivate let filterCollectionViewCellIdentifier = "FilterCollectionViewCell"
+fileprivate let sectionHeaderIdentifier = "FillterCollectionViewSupplementaryHeader"
+
 class FiltersViewController: BaseViewController {
 
     var viewModel: FiltersViewModel = FiltersViewModel()
@@ -43,7 +46,7 @@ extension FiltersViewController: UICollectionViewDataSource  {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: filterCollectionViewCellIdentifier, for: indexPath) as! FilterCollectionViewCell
         
         let str = self.viewModel.countryOrCityStr(at: indexPath)
         cell.tagLabel.text = str
@@ -55,7 +58,7 @@ extension FiltersViewController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
-                                                                             withReuseIdentifier: "FillterCollectionViewSupplementaryHeader",
+                                                                             withReuseIdentifier: sectionHeaderIdentifier,
                                                                              for: indexPath) as! FilterCollectionViewSupplimentaryHeader
             headerView.filterLabel.text = indexPath.section == 0 ? "Country" : "City"
            

@@ -30,7 +30,6 @@ class FiltersViewModel {
         
         selectedCountries = FiltersInMemoryStore.shared.loadSelectedCountries()
         selectedCities = FiltersInMemoryStore.shared.loadSelectedCities()
-        
     }
     
     deinit {
