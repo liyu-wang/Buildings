@@ -8,6 +8,10 @@
 
 import UIKit
 
+fileprivate let assetMapBtnTag = 100
+fileprivate let assetExplorerBtnTag = 101
+fileprivate let assetRegisterBtnTag = 102
+
 class BuildingsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cityLabel: UILabel!
@@ -50,11 +54,11 @@ extension BuildingsTableViewCell {
             button.addTarget(self, action: #selector(BuildingsTableViewCell.buttonTapped(sender:)), for: .touchUpInside)
             switch action {
             case .assetMap:
-                button.tag = 100
+                button.tag = assetMapBtnTag
             case .assetExplorer:
-                button.tag = 101
+                button.tag = assetExplorerBtnTag
             case .assetRegister:
-                button.tag = 102
+                button.tag = assetRegisterBtnTag
             }
             
             actionsStackView.addArrangedSubview(button)
@@ -64,9 +68,9 @@ extension BuildingsTableViewCell {
     @objc func buttonTapped(sender: Any) {
         if let button = sender as? UIButton {
             var action = ProductAction.assetMap
-            if button.tag == 101 {
+            if button.tag == assetExplorerBtnTag {
                 action = .assetExplorer
-            } else if button.tag == 102  {
+            } else if button.tag == assetRegisterBtnTag  {
                 action = .assetRegister
             }
             self.controller?.didPerform(action: action, on: self)

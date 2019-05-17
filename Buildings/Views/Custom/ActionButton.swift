@@ -20,7 +20,7 @@ class ActionButton: UIButton {
         self.layer.borderColor = UIColor.purple.cgColor
         self.layer.masksToBounds = true
         
-        self.setBackgroundImage(UIImage.image(with: UIColor.black.withAlphaComponent(0.6)), for: .normal)
+        self.setBackgroundImage(UIImage.onePixelImage(with: UIColor.black.withAlphaComponent(0.6)), for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {

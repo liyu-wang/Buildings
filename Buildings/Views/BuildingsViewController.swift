@@ -13,6 +13,9 @@ import Kingfisher
 import CoreLocation
 import MapKit
 
+fileprivate let buildingsTableViewCell = "BuildingsTableViewCell"
+fileprivate let estimatedRowHeight: CGFloat = 300
+
 class BuildingsViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -40,12 +43,12 @@ extension BuildingsViewController {
         
         self.tableView.delegate = self
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 300
+        self.tableView.estimatedRowHeight = estimatedRowHeight
     }
     
     private func setupReactive() {
         self.viewModel.buildings
-            .bind(to: tableView.rx.items(cellIdentifier: "BuildingsTableViewCell", cellType: BuildingsTableViewCell.self)) { (row, building, cell) in
+            .bind(to: tableView.rx.items(cellIdentifier: buildingsTableViewCell, cellType: BuildingsTableViewCell.self)) { (row, building, cell) in
                 cell.cityLabel.text = "\(building.address.city) \(building.address.country)"
                 cell.addressLabel.text = "\(building.address.line1 ?? "") \(building.address.line2 ?? "")"
                 cell.buildingImageView.kf.setImage(with: URL(string: building.imageUrl))
