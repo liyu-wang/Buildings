@@ -24,7 +24,7 @@ class BuildingsViewModel {
     init(buildingWebService: BuildingsWebService = BuildingsWebServiceImpl()) {
         self.buildingWebService = buildingWebService
         
-        Observable.combineLatest(FiltersInMemoryStore.shared.selectedCountries, FiltersInMemoryStore.shared.selectedCities)
+        Observable.zip(FiltersInMemoryStore.shared.selectedCountries, FiltersInMemoryStore.shared.selectedCities)
             .subscribe(
                 onNext: { countryFilters, cityFilters in
                     self.applyFilters(counties: countryFilters, cities: cityFilters)

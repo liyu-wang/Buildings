@@ -47,12 +47,8 @@ extension FiltersInMemoryStore {
     }
     
     func save(selectedSountries: Set<String>, selectedeCities: Set<String>) {
-        if selectedSountries != self.selectedCountries.value {
-            self.selectedCountries.accept(selectedSountries)
-        }
-        if selectedeCities != self.selectedCities.value {
-            self.selectedCities.accept(selectedeCities)
-        }
+        self.selectedCountries.accept(selectedSountries)
+        self.selectedCities.accept(selectedeCities)
     }
 
 }
