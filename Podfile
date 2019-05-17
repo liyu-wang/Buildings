@@ -8,6 +8,7 @@ target 'Buildings' do
   # Pods for Buildings
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod 'RxBlocking', '~> 5'
 
   pod 'Kingfisher'
 
@@ -16,6 +17,7 @@ target 'Buildings' do
     # Pods for testing
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
+    pod 'RxBlocking', '~> 5'
   end
 
 end
