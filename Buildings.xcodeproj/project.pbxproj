@@ -27,6 +27,7 @@
 		72A3DCD2228F79C40002146F /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3DCD1228F79C40002146F /* Coordinators.swift */; };
 		72A3DCD4229010650002146F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3DCD3229010650002146F /* Storyboarded.swift */; };
 		72A3DCD6229015600002146F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3DCD5229015600002146F /* MainCoordinator.swift */; };
+		72A3DCD8229044440002146F /* FiltersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3DCD7229044440002146F /* FiltersCoordinator.swift */; };
 		72B45E3B228822FB00982D34 /* BuildingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */; };
 		72B45E3D22896B2300982D34 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3C22896B2300982D34 /* ActionButton.swift */; };
 		72B45E402289779900982D34 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3F2289779900982D34 /* UIImage+Extension.swift */; };
@@ -80,6 +81,7 @@
 		72A3DCD1228F79C40002146F /* Coordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		72A3DCD3229010650002146F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		72A3DCD5229015600002146F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		72A3DCD7229044440002146F /* FiltersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCoordinator.swift; sourceTree = "<group>"; };
 		72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsTableViewCell.swift; sourceTree = "<group>"; };
 		72B45E3C22896B2300982D34 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		72B45E3F2289779900982D34 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				72A3DCD1228F79C40002146F /* Coordinators.swift */,
 				72A3DCD3229010650002146F /* Storyboarded.swift */,
 				72A3DCD5229015600002146F /* MainCoordinator.swift */,
+				72A3DCD7229044440002146F /* FiltersCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				72B45E402289779900982D34 /* UIImage+Extension.swift in Sources */,
 				72B45E422289959F00982D34 /* BuildingDetailsViewController.swift in Sources */,
 				72464EF622859BEE009CAB9D /* BaseViewController.swift in Sources */,
+				72A3DCD8229044440002146F /* FiltersCoordinator.swift in Sources */,
 				72464EF822859C1C009CAB9D /* FiltersViewController.swift in Sources */,
 				72464EFA22859C5B009CAB9D /* FiltersViewModel.swift in Sources */,
 				72A3DCD6229015600002146F /* MainCoordinator.swift in Sources */,
