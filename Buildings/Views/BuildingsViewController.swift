@@ -20,8 +20,11 @@ class BuildingsViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingSpinner: UIView!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     private let viewModel = BuildingsViewModel()
+    
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,14 @@ extension BuildingsViewController {
             .map { !$0 }
             .bind(to: self.loadingSpinner.rx.isHidden)
             .disposed(by: bag)
+        
+        self.filterButton.rx.tap
+            .subscribe(
+                onNext: { [weak self] in
+                    self?.coordinator?.showFilters()
+                }
+            )
+            .disposed(by: bag)
     }
     
 }
@@ -92,8 +103,7 @@ extension BuildingsViewController {
     }
     
     private func pushDetailsViewController(for building: Building) {
-        let buildingDetailsVC = BuildingDetailsViewController.newInstance(with: BuildingDetailsViewModel(with: building))
-        self.navigationController?.pushViewController(buildingDetailsVC, animated: true)
+        self.coordinator?.showBuildingDetails(for: building)
     }
     
     private func resgister(_ building: Building) {

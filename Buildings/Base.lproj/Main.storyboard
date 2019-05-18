@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CM3-Ei-J3P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Building List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="BuildingsViewController" customModule="Buildings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuildingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="BuildingsViewController" customModule="Buildings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,13 +122,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Building List" id="Ncw-3a-KnA">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter" id="Ht4-6s-pXO">
-                            <connections>
-                                <segue destination="s0T-Ls-1Ka" kind="show" identifier="showFilters" id="qaZ-gY-Ria"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter" id="Ht4-6s-pXO"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="filterButton" destination="Ht4-6s-pXO" id="l0h-KP-t5k"/>
                         <outlet property="loadingSpinner" destination="mpX-9c-s89" id="u0g-71-EE9"/>
                         <outlet property="tableView" destination="OeT-xH-Pkz" id="bzh-PN-c7A"/>
                     </connections>
@@ -140,7 +138,7 @@
         <!--Filters-->
         <scene sceneID="f85-Jr-p7L">
             <objects>
-                <viewController id="s0T-Ls-1Ka" customClass="FiltersViewController" customModule="Buildings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FiltersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s0T-Ls-1Ka" customClass="FiltersViewController" customModule="Buildings" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jkJ-tr-SMJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +161,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0x-R5-q7a" customClass="TagLabel" customModule="Buildings" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="71"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
@@ -222,13 +220,14 @@
                         <viewLayoutGuide key="safeArea" id="QTE-dV-iJe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Filters" id="Rvj-Gw-k3p"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="filterCollectionView" destination="kun-pM-ZiG" id="5Bx-Jo-r7H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZy-IE-PzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163.768115942029" y="-64.285714285714278"/>
+            <point key="canvasLocation" x="1164" y="-64"/>
         </scene>
         <!--Building Details View Controller-->
         <scene sceneID="IJi-TE-rCU">
@@ -281,22 +280,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGW-s4-9DX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135" y="664"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pWT-WJ-abc">
-            <objects>
-                <navigationController id="CM3-Ei-J3P" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FwW-lW-omC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="N7k-xE-EaM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3OR-cZ-H6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1026" y="-64"/>
         </scene>
     </scenes>
     <resources>

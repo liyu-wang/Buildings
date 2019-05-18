@@ -19,6 +19,8 @@ class FiltersViewController: BaseViewController {
     
     @IBOutlet weak var filterCollectionView: UICollectionView!
     
+    weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

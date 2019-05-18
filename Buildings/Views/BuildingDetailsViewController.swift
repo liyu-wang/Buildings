@@ -26,6 +26,8 @@ class BuildingDetailsViewController: BaseViewController {
     
     var viewModel: BuildingDetailsViewModel!
     
+    weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

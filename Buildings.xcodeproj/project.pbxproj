@@ -24,6 +24,9 @@
 		72464F032285B441009CAB9D /* WebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72464F022285B441009CAB9D /* WebServiceTests.swift */; };
 		7250DA72228B03EA00A33F64 /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 7250DA71228B03EA00A33F64 /* buildings.json */; };
 		7250DA74228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7250DA73228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift */; };
+		72A3DCD2228F79C40002146F /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3DCD1228F79C40002146F /* Coordinators.swift */; };
+		72A3DCD4229010650002146F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3DCD3229010650002146F /* Storyboarded.swift */; };
+		72A3DCD6229015600002146F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3DCD5229015600002146F /* MainCoordinator.swift */; };
 		72B45E3B228822FB00982D34 /* BuildingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */; };
 		72B45E3D22896B2300982D34 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3C22896B2300982D34 /* ActionButton.swift */; };
 		72B45E402289779900982D34 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B45E3F2289779900982D34 /* UIImage+Extension.swift */; };
@@ -74,6 +77,9 @@
 		72464F022285B441009CAB9D /* WebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceTests.swift; sourceTree = "<group>"; };
 		7250DA71228B03EA00A33F64 /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
 		7250DA73228B042D00A33F64 /* MockBuidlingsWebServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBuidlingsWebServiceImpl.swift; sourceTree = "<group>"; };
+		72A3DCD1228F79C40002146F /* Coordinators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
+		72A3DCD3229010650002146F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		72A3DCD5229015600002146F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		72B45E3A228822FB00982D34 /* BuildingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsTableViewCell.swift; sourceTree = "<group>"; };
 		72B45E3C22896B2300982D34 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		72B45E3F2289779900982D34 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -140,6 +146,7 @@
 		72464EC722859791009CAB9D /* Buildings */ = {
 			isa = PBXGroup;
 			children = (
+				72A3DCD0228F79730002146F /* Coordinators */,
 				72D6F0BF228A78CF00EB25BE /* DB */,
 				72B45E3E2289778000982D34 /* Extensions */,
 				72464EED22859A60009CAB9D /* Models */,
@@ -215,6 +222,16 @@
 				72464F002285A92B009CAB9D /* WebServiceError.swift */,
 			);
 			path = WebServices;
+			sourceTree = "<group>";
+		};
+		72A3DCD0228F79730002146F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				72A3DCD1228F79C40002146F /* Coordinators.swift */,
+				72A3DCD3229010650002146F /* Storyboarded.swift */,
+				72A3DCD5229015600002146F /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		72B45E3E2289778000982D34 /* Extensions */ = {
@@ -468,6 +485,7 @@
 				72464EF622859BEE009CAB9D /* BaseViewController.swift in Sources */,
 				72464EF822859C1C009CAB9D /* FiltersViewController.swift in Sources */,
 				72464EFA22859C5B009CAB9D /* FiltersViewModel.swift in Sources */,
+				72A3DCD6229015600002146F /* MainCoordinator.swift in Sources */,
 				72B45E472289BD5700982D34 /* TagLabel.swift in Sources */,
 				72464EF122859ABB009CAB9D /* BuildingsViewController.swift in Sources */,
 				72B45E4C228AE0EC00982D34 /* FilterCollectionViewSupplimentaryHeader.swift in Sources */,
@@ -475,6 +493,7 @@
 				72B45E45228995F000982D34 /* BuildingDetailsViewModel.swift in Sources */,
 				72464EFF22859CE6009CAB9D /* BuidlingsWebServiceImpl.swift in Sources */,
 				72B45E492289BDAC00982D34 /* FilterCollectionViewCell.swift in Sources */,
+				72A3DCD2228F79C40002146F /* Coordinators.swift in Sources */,
 				72B45E3B228822FB00982D34 /* BuildingsTableViewCell.swift in Sources */,
 				72464F012285A92B009CAB9D /* WebServiceError.swift in Sources */,
 				72464EFD22859CD3009CAB9D /* BuildingsWebService.swift in Sources */,
@@ -482,6 +501,7 @@
 				72464EEF22859A77009CAB9D /* Building.swift in Sources */,
 				72464EC922859791009CAB9D /* AppDelegate.swift in Sources */,
 				72B45E3D22896B2300982D34 /* ActionButton.swift in Sources */,
+				72A3DCD4229010650002146F /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
