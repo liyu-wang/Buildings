@@ -22,9 +22,10 @@ class BuildingsViewController: BaseViewController {
     @IBOutlet weak var loadingSpinner: UIView!
     @IBOutlet weak var filterButton: UIBarButtonItem!
     
-    private let viewModel = BuildingsViewModel()
+    var showFiltersAction: (() -> Void)?
+    var showBuildingDetailsAction: ((Building) -> Void)?
     
-    weak var coordinator: MainCoordinator?
+    private let viewModel = BuildingsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,7 @@ extension BuildingsViewController {
         self.filterButton.rx.tap
             .subscribe(
                 onNext: { [weak self] in
-                    self?.coordinator?.showFilters()
+                    self?.showFiltersAction?()
                 }
             )
             .disposed(by: bag)
@@ -103,7 +104,7 @@ extension BuildingsViewController {
     }
     
     private func pushDetailsViewController(for building: Building) {
-        self.coordinator?.showBuildingDetails(for: building)
+        self.showBuildingDetailsAction?(building)
     }
     
     private func resgister(_ building: Building) {

@@ -19,11 +19,23 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = BuildingsViewController.instantiate()
-        vc.coordinator = self
+        
+        vc.showFiltersAction = {
+            let vc = FiltersViewController.instantiate()
+            self.navigationController.pushViewController(vc, animated: true)
+        }
+        
+        vc.showBuildingDetailsAction = { building in
+            let vc = BuildingDetailsViewController.instantiate()
+            vc.viewModel = BuildingDetailsViewModel(with: building)
+            self.navigationController.pushViewController(vc, animated: true)
+        }
+        
         navigationController.pushViewController(vc, animated: false)
     }
 }
 
+/*
 extension MainCoordinator {
     func showFilters() {
         let vc = FiltersViewController.instantiate()
@@ -38,3 +50,4 @@ extension MainCoordinator {
         navigationController.pushViewController(vc, animated: true)
     }
 }
+*/
