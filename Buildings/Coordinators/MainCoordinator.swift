@@ -24,7 +24,7 @@ class MainCoordinator: Coordinator {
     }
 }
 
-extension MainCoordinator {
+extension MainCoordinator: ShowingFilters, ShowingBuildingDetails {
     func showFilters() {
         let vc = FiltersViewController.instantiate()
         vc.coordinator = self

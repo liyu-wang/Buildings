@@ -24,7 +24,7 @@ class BuildingsViewController: BaseViewController {
     
     private let viewModel = BuildingsViewModel()
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: (ShowingFilters & ShowingBuildingDetails)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
