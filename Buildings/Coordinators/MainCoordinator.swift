@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
     var children: [Coordinator] = []
     
     var navigationController: UINavigationController
@@ -18,17 +18,27 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
+        navigationController.delegate = self
         let vc = BuildingsViewController.instantiate()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func childDidFinish(_ child: Coordinator?) {
+        for (index, coordinator) in self.children.enumerated() {
+            if coordinator === child {
+                children.remove(at: index)
+                break
+            }
+        }
     }
 }
 
 extension MainCoordinator {
     func showFilters() {
-        let vc = FiltersViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let child = FiltersCoordinator(navigationController: self.navigationController)
+        self.children.append(child)
+        child.start()
     }
     
     func showBuildingDetails(for building: Building) {
@@ -36,5 +46,24 @@ extension MainCoordinator {
         vc.viewModel = BuildingDetailsViewModel(with: building)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+extension MainCoordinator {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        // Read the view controller we’re moving from.
+        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
+            return
+        }
+        
+        // Check whether our view controller array already contains that view controller.
+        if navigationController.viewControllers.contains(fromViewController) {
+            return
+        }
+        
+        // We’re still here – it means we’re popping the view controller, so we can check whether it’s a buy view controller
+        if let filtersViewController = fromViewController as? FiltersViewController {
+            childDidFinish(filtersViewController.coordinator)
+        }
     }
 }
